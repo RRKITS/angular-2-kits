@@ -10,7 +10,7 @@ const STATIC_SRC = 'src/static/**/*';
  */
 gulp.task('static', () => {
 	return gulp.src(STATIC_SRC)
-		.pipe(gulp.dest('app'));
+		.pipe(gulp.dest('app/public'));
 });
 
 gulp.task('static:watch', () => gulp.watch(STATIC_SRC, ['static']));

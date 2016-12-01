@@ -14,10 +14,22 @@ const DEPS_LIST = [
 	'node_modules/underscore/underscore-min.js'
 ];
 
+
 /**
  * Copies vendors that are being required in runtime.
  */
 gulp.task('dependecies', () => {
 	return gulp.src(DEPS_LIST, { base: 'node_modules' })
-		.pipe(gulp.dest('app/lib'));
+		.pipe(gulp.dest('app/public/lib'));
 });
+
+
+/**
+ * Copies all server files to app.
+ */
+gulp.task('server:copy', () => {
+	return gulp.src(SERVER_SRC)
+		.pipe(gulp.dest('app'));
+});
+
+gulp.task('server:watch', () => gulp.watch(SERVER_SRC, ['server:copy']));

@@ -1,12 +1,12 @@
 "use strict";
 
 let gulp = require('gulp');
-let connect = require('gulp-connect');
+let nodemon = require('gulp-nodemon');
 
-gulp.task('connect', () => {
-	connect.server({
-		root: './app',
-		port: 8000,
-		livereload: true
+gulp.task('nodemon', () => {
+	nodemon({
+		script: 'app/app.js',
+		watch: ["app/**/*"],
+		ext: 'js html css'
 	});
 });

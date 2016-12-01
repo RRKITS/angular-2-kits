@@ -10,12 +10,12 @@ require('./gulp-tasks/static');
 require('./gulp-tasks/connect');
 require('./gulp-tasks/clean');
 
-gulp.task('compile', ['css', 'static', 'dependecies', 'templates', 'app']);
-gulp.task('watch', ['css:watch', 'templates:watch', 'app:watch', 'static:watch']);
+gulp.task('compile', ['css', 'static', 'server:copy', 'dependecies', 'templates', 'app']);
+gulp.task('watch', ['css:watch', 'templates:watch', 'app:watch', 'server:watch', 'static:watch']);
 
 
 gulp.task('build', ['clean'], () => {
-	gulp.run(['compile', 'connect', 'watch']);
+	gulp.run(['compile', 'nodemon', 'watch']);
 });
 
 gulp.task('default', ['build']);

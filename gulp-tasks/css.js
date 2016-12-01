@@ -16,7 +16,7 @@ gulp.task('css', () => {
 		.pipe(less({
 			paths: [ path.join(__dirname, 'css', 'includes') ]
 		}))
-		.pipe(gulp.dest('app/css'));
+		.pipe(gulp.dest('app/public/css'));
 });
 
 gulp.task('css:watch', () => gulp.watch(LESS_SRC_PATH, ['css']));

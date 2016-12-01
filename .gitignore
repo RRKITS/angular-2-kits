@@ -1,6 +1,5 @@
 node_modules
 app
 .idea
-typings
 *.iml
 .DS_Store

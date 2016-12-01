@@ -15,7 +15,7 @@ gulp.task('app', () => {
 	return gulp.src(['typings/index.d.ts', APP_SRC])
 		.pipe(plumber())
 		.pipe(typescript(compilerOptions))
-		.pipe(gulp.dest('app/js'));
+		.pipe(gulp.dest('app/public/js'));
 });
 
 gulp.task('app:watch', () => gulp.watch(APP_SRC, ['app']));
